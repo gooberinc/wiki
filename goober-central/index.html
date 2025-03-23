@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Server Setup - goober docs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Server Setup";
+        var mkdocs_page_input_path = "goober-central\\index.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> goober docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Welcome to goober docs</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Goober</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../goober/">Index</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Goober central</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Server Setup</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#setup-instructions-running-maingo-directly">Setup Instructions (Running main.go directly)</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="COMPILING/">Server compilation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="TELEGRAM/">Telegram Setup</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">goober docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Goober central</li>
+      <li class="breadcrumb-item active">Server Setup</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="server-setup">Server Setup</h1>
+<h2 id="requirements">Requirements</h2>
+<p>Before running the application, ensure that you have the following:</p>
+<ul>
+<li>Go 1.20 or higher</li>
+<li>Git</li>
+</ul>
+<h2 id="setup-instructions-running-maingo-directly">Setup Instructions (Running main.go directly)</h2>
+<blockquote>
+<p>TIP:
+If you're looking for pre-built executables, check out the latest release! Just follow step 2.</p>
+</blockquote>
+<ol>
+<li>
+<p><strong>Clone the Repository</strong>:
+   If you haven't already, clone the repository to your local machine:
+   ```
+   git clone <repository-url>
+   cd <repository-directory></p>
+</li>
+<li>
+<p><strong>Create a <code>.env</code> file</strong>:
+    In the project root directory, create a .env file and add the following line:
+    <code>webhookID={discord webhook}</code></p>
+</li>
+<li>
+<p><strong>Install Dependencies</strong>:
+    Install the required dependencies from go.mod
+   <code>go mod tidy</code></p>
+</li>
+<li>
+<p><strong>Run the script</strong>:
+    Start the application using go:
+   <code>go run main.go</code></p>
+</li>
+<li>
+<p><strong>Open it in a web browser</strong>:
+    Once the server is running, open your browser of choice and navigate to <code>http://localhost:9094</code></p>
+</li>
+<li>
+<p><strong>Configure goober</strong>:
+    Once you've confirmed that the server is running, navigate to your existing goober install. Inside <code>config.py</code>, update the <code>VERSION_URL</code> variable to point to the domain where goober central is hosted.</p>
+</li>
+</ol>
+<blockquote>
+<p>WARNING:
+Once you self-host goober central, version checking and name registration become your responsibility! Not mine!</p>
+</blockquote>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../goober/" class="btn btn-neutral float-left" title="Index"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="COMPILING/" class="btn btn-neutral float-right" title="Server compilation">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../goober/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="COMPILING/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
