@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Telegram Setup - goober docs</title>
+    <title>COGS - goober docs</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Telegram Setup";
-        var mkdocs_page_input_path = "goober-central\\TELEGRAM.md";
+        var mkdocs_page_name = "COGS";
+        var mkdocs_page_input_path = "goober\\COGS.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -44,29 +44,21 @@
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Goober</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../goober/COGS/">COGS</a>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">COGS</a>
+    <ul class="current">
+    </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../goober/SETUP/">SETUP</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../SETUP/">SETUP</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Goober central</span></p>
-              <ul class="current">
-                  <li class="toctree-l1"><a class="reference internal" href="../">Server Setup</a>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../goober-central/">Server Setup</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../COMPILING/">Server compilation</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../goober-central/COMPILING/">Server compilation</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Telegram Setup</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#step-1-creating-your-bot">Step 1: Creating your bot</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#step-2-get-your-chat-id">Step 2: Get Your Chat ID</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#step-3-modifying-the-env-file">Step 3: Modifying the .env file.</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#finalizing">Finalizing:</a>
-    </li>
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../goober-central/TELEGRAM/">Telegram Setup</a>
                   </li>
               </ul>
       </div>
@@ -83,8 +75,8 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">Goober central</li>
-      <li class="breadcrumb-item active">Telegram Setup</li>
+          <li class="breadcrumb-item">Goober</li>
+      <li class="breadcrumb-item active">COGS</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -93,68 +85,21 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="telegram-setup">Telegram Setup</h1>
-<h2 id="step-1-creating-your-bot">Step 1: Creating your bot</h2>
+                <h3 id="adding-custom-commands">Adding Custom Commands</h3>
+<p>To add custom commands to Goober:<br />
+1. <strong>Download the Python Scripts</strong><br />
+    Download the custom command Python files (<code>.py</code>) that you wish to use. (Or, you can try to make your own cogs!)</p>
 <ol>
-<li>
-<p><strong>Open Telegram</strong>:
-   Open the Telegram app on your phone or desktop.</p>
-</li>
-<li>
-<p><strong>Search for the BotFather</strong>:
-   In the Telegram search bar, type <strong>@BotFather</strong> and select the official BotFather bot.</p>
-</li>
-<li>
-<p><strong>Start a conversation with BotFather</strong>:
-   Press <strong>Start</strong> to begin a conversation with BotFather.</p>
-</li>
-<li>
-<p><strong>Create a new bot</strong>:
-   Type the command <code>/newbot</code> and send it.</p>
-</li>
-<li>
-<p><strong>Choose a name for your bot</strong>:
-   The BotFather will prompt you to choose a name for your bot (this is the display name).</p>
-</li>
-<li>
-<p><strong>Choose a username for your bot</strong>:
-   The BotFather will ask for a username for your bot (this must be unique and end in "bot", like <code>your_bot</code>).</p>
-</li>
-<li>
-<p><strong>Get your bot token</strong>:
-   After successfully creating the bot, BotFather will provide you with a token. It will look something like <code>123456789:ABCDefGhIjklmnOPQRstUvWxYZ</code>. Copy this token as you'll need it later.</p>
-</li>
-</ol>
-<h2 id="step-2-get-your-chat-id">Step 2: Get Your Chat ID</h2>
-<ol>
-<li>
-<p><strong>Search for the @userinfobot</strong>:
-   In the Telegram search bar, type <strong>@userinfobot</strong> and start a conversation with it.</p>
-</li>
-<li>
-<p><strong>Grab your chat ID</strong>:
-   After starting the conversation, the bot will display your chat ID. Copy this ID and use it in your <code>.env</code> file.</p>
-</li>
-</ol>
-<h2 id="step-3-modifying-the-env-file">Step 3: Modifying the <code>.env</code> file.</h2>
-<ol>
-<li>Add the corresponding IDs to the entries. It should look something like this:
-   ```bash
-    telegram_token=123456789:ABCDefGhIjklmnOPQRstUvWxYZ
-    telegram_id=1234567891011
-    use_telegram=True</li>
-</ol>
-<h2 id="finalizing">Finalizing:</h2>
-<ol>
-<li>Save the <code>.env</code> file and start the server with uvicorn.</li>
-<li>Get a Goober instance to ping the server.</li>
-<li>Youre done!</li>
+<li><strong>Place the Scripts in the Cog Folder</strong><br />
+    Move the downloaded <code>.py</code> files into the <code>cog</code> folder of your Goober installation. These custom commands will now be available for use within Goober.<br />
+<em>Tip: use <a href="https://github.com/gooberinc/goober/blob/main/cogs/cogmanager.py">CogManager.py</a> to easily manage cogs via Discord!</em></li>
 </ol>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../COMPILING/" class="btn btn-neutral float-left" title="Server compilation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../.." class="btn btn-neutral float-left" title="Welcome to goober docs"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../SETUP/" class="btn btn-neutral float-right" title="SETUP">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -177,8 +122,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../COMPILING/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../.." style="color: #fcfcfc">&laquo; Previous</a></span>
     
+    
+      <span><a href="../SETUP/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
